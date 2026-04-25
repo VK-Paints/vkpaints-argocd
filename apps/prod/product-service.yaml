@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-product-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/VK-Paints/vkpaints-helm-chart.git'
+    targetRevision: main
+    path: charts/product-service
+    helm:
+      valueFiles:
+        - values-prod.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: vkpaints-prod-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
