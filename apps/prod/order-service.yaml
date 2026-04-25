@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/VK-Paints/vkpaints-helm-chart.git'
+    repoURL: 'https://github.com/VK-Paints/vkpaints-helm-charts.git'
     targetRevision: main
     path: charts/order-service
     helm:
@@ -21,3 +21,4 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+
