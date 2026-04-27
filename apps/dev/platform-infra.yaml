@@ -7,8 +7,8 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/VK-Paints/vkpaints-helm-charts.git'
-    targetRevision: dev
-    path: charts/platform-infra
+    targetRevision: main
+    path: helm/vk-paints
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: vkpaints-dev-ns
