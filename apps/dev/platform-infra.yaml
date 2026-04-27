@@ -9,6 +9,9 @@ spec:
     repoURL: 'https://github.com/VK-Paints/vkpaints-helm-charts.git'
     targetRevision: main
     path: helm/vk-paints
+    helm:
+      valueFiles:
+        - values-dev.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: vkpaints-dev-ns
